@@ -19,4 +19,13 @@ var height = {
     unit: 'm'
 }
 
+function createNewPerson(name) {
+    var p = {}
+    p.name = name;
+    p.greeting = function () {
+        alert('Hi! My name is ' + p.name);
+    }
+    return p;
+}
+
 person[height.name] = height
