@@ -3,15 +3,15 @@ function other(fn) {
     console.log('in other')
 }
 
-function person() {
+function Person() {
     //var self = this
     this.age = 18
 
-    other(function growUp() {
+    other(() => {
         console.log(this.age)
         this.age++
     })
     //return growUp
 }
 
-person()
+var p = new Person()
