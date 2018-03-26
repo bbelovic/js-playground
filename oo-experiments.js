@@ -16,3 +16,14 @@ postriziny.toString = ftoString
 
 console.log(sow.toString())
 console.log(postriziny.toString())
+
+var director = new Object({name: 'belovic', toString: ftoString})
+console.log(director.name)
+
+Movie.prototype.getDirectorsName = function () {return this.director.name}
+Movie.prototype.fullInfo = 'name='+ this.name //+ ', director=' + this.director.name
+
+var dname = sow.getDirectorsName()
+console.log(dname)
+console.log(postriziny.getDirectorsName())
+console.log(sow.fullInfo)
