@@ -10,6 +10,8 @@ function Movie (name, director) {
 var sow = new Movie('The shape of water', new Person('del Toro'))
 var postriziny = new Movie('Postriziny', new Person('Menzel'))
 
+
+
 var ftoString = function () {return this.name}
 sow.toString = ftoString
 postriziny.toString = ftoString
@@ -27,3 +29,4 @@ var dname = sow.getDirectorsName()
 console.log(dname)
 console.log(postriziny.getDirectorsName())
 console.log(sow.fullInfo)
+

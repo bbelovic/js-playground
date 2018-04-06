@@ -1,4 +1,4 @@
-var person = {
+var json = {
     name: {
         firstName: 'Joe',
         lastName: 'Doe'
@@ -26,6 +26,6 @@ function Person(name) {
     }
 }
 
+var jdoe = new Person('joh doe');
 
-
-person[height.name] = height
+json[height.name] = height
