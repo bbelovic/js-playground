@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Simple html page</title>
+        <style>
+            .highlight {
+                color: white;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <p>This is simple link to <a href="https://www.mozilla.org">Mozila</a>.</p>
+        </section>
+        <script>
+            var body = document.querySelector('body')
+            body.style.border = '12px solid red'
+            body.style.padding = '20px'
+            var link = document.querySelector('a')
+            link.textContent = 'developer network'
+            link.href = 'https://developer.mozilla.org'
+
+            var section = document.querySelector('section')
+            var para = document.createElement('p')
+            para.textContent = 'Brand new paragraph created by javascript'
+            para.setAttribute('class', 'highlight')
+            section.appendChild(para)
+        </script>
+    </body>
+</html>
