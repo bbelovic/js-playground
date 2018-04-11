@@ -5,6 +5,7 @@
     </head>
     <body>
         <h1>AJAX experiments</h1>
+        <pre></pre>
         <form>
             <label for="choose-verse">
                 <select id="choose-verse" name="choose-verse">
@@ -13,9 +14,6 @@
                 </select>
             </label>
         </form>
-        <pre>
-
-        </pre>
     </body>
     <script>
         var pre = document.querySelector('pre')
@@ -25,14 +23,14 @@
             var request = new XMLHttpRequest()
             request.open('GET', verseText + '.txt')
             request.responseType = 'text'
-            request.onload = function () {
+            request.onload =  () => {
                 pre.textContent = request.response
             }
             request.send()
         }
 
         var select = document.querySelector('select')
-        select.onchange = function () {
+        select.onchange = () => {
             var selectedOption = select.value
             update(selectedOption)
         }
