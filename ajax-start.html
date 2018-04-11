@@ -14,14 +14,29 @@
             </label>
         </form>
         <pre>
-            
+
         </pre>
     </body>
     <script>
+        var pre = document.querySelector('pre')
+        function update(verseText) {
+            verseText = verseText.replace(" ", "")
+            verseText = verseText.toLowerCase()
+            var request = new XMLHttpRequest()
+            request.open('GET', verseText + '.txt')
+            request.responseType = 'text'
+            request.onload = function () {
+                pre.textContent = request.response
+            }
+            request.send()
+        }
+
         var select = document.querySelector('select')
         select.onchange = function () {
             var selectedOption = select.value
             update(selectedOption)
         }
+        update('Verse 1')
+        select.value = 'Verse 1'
     </script>
 </html>
