@@ -1,7 +1,16 @@
-setTimeout(function () {
-    console.log("After timeout")
-}, 1000 )
+function getRandomInt() {
+    return Math.floor(Math.random() * Math.floor(2))
+}
 
 var promise = new Promise((resolve, reject) => {
-    setTimeout(() => resolve("resolved value"), 3000)
-}).then(res => console.log("From promise: "+ res))
+    setTimeout(() => {
+        var rnd = getRandomInt();
+        if (rnd === 1) {
+            resolve(rnd)
+        } else {
+            reject(rnd)
+        }
+    }, 300)
+}).then(res => console.log("Success: "+ res))
+  .catch(fail => console.log("Failure: "+ fail))
+  .then(msg => console.log("end"))
