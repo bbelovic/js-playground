@@ -17,6 +17,18 @@
     </body>
     <script>
         var pre = document.querySelector('pre')
+
+        function toURL(verseText) {
+            return verseText.replace(" ", "").toLowerCase()
+        }
+
+        function updateUsingFetch(verseText) {
+            fetch(toURL(verseText)).then(response => response.text())
+                .then(txt => pre.textContent = txt)
+        }
+
+
+
         function update(verseText) {
             verseText = verseText.replace(" ", "")
             verseText = verseText.toLowerCase()
@@ -32,9 +44,9 @@
         var select = document.querySelector('select')
         select.onchange = () => {
             var selectedOption = select.value
-            update(selectedOption)
+            updateUsingFetch(selectedOption)
         }
-        update('Verse 1')
+        updateUsingFetch('Verse 1')
         select.value = 'Verse 1'
     </script>
 </html>
