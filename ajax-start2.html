@@ -4,7 +4,22 @@
     </head>
     <body>
         <script>
-            fetch()
+            function renderItems(items) {
+                var list = document.querySelector('ul');
+                for (var i = 0; i < items.length; i++) {
+                    var listItem = document.createElement('li');
+                    listItem.innerText = items[i].name;
+                    list.appendChild(listItem);
+                }
+                
+                
+            }
+
+
+            fetch('http://localhost:8080/todoItems')
+            .then(response => response.json())
+            .then(itemsJsonPromise => renderItems(itemsJsonPromise))
         </script>
+        <ul></ul>
     </body>
 </html>
